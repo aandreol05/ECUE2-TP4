@@ -16,7 +16,7 @@ public class Disque extends Figure {
     }
 
     public double retourneSurface(){
-        return Math.PI * this.rayon * this.rayon;
+        return Math.PI * (this.rayon * this.rayon);
     }
 
     public double retournePerimetre(){
