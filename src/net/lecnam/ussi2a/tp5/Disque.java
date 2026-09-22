@@ -1,35 +1,35 @@
 package net.lecnam.ussi2a.tp5;
 
-public class Disque {
+public class Disque extends Figure {
 
     double rayon;
-    Point centre;
+    Point point;
 
 
     Disque(double rayon, Point centre) {
         this.rayon = rayon;
-        this.centre = centre;
+        this.point = centre;
     }
 
     Disque(double rayon, double x, double y) {
         this(rayon, new Point(x, y));
     }
 
-    double retourneSurface(){
+    public double retourneSurface(){
         return Math.PI * this.rayon * this.rayon;
     }
 
-    double retournePerimetre(){
+    public double retournePerimetre(){
         return 2 * Math.PI * this.rayon;
     }
 
-    void translate(double x, double y){
-        this.centre.translate(x,y);
+    public void translate(double x, double y){
+        this.point.translate(x,y);
     }
 
-    boolean contient(Point point){
-        double difX = Math.pow((point.x - this.centre.x),2);
-        double difY = Math.pow((point.y - this.centre.y),2);
+    public boolean contient(Point point){
+        double difX = Math.pow((point.x - this.point.x),2);
+        double difY = Math.pow((point.y - this.point.y),2);
         double distance = Math.sqrt(difX + difY);
         return distance <= this.rayon ;
     }
@@ -37,7 +37,7 @@ public class Disque {
     @Override
     public boolean equals(Object object){
         Disque disque = (Disque) object;
-        return this.centre.equals(disque.centre)
+        return this.point.equals(disque.point)
                 && this.rayon == disque.rayon;
     }
 
@@ -45,7 +45,7 @@ public class Disque {
     public String toString() {
         return "Disque{" +
                 "rayon=" + rayon +
-                ", Centre=" + centre +
+                ", Centre=" + point +
                 ", perimètre=" + this.retournePerimetre() +
                 ", surface=" + this.retourneSurface() +
                 '}';
