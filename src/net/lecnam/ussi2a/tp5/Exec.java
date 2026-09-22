@@ -16,6 +16,8 @@ public class Exec {
         Disque d2 = new Disque(8,5,3);
         Triangle t = new Triangle(2,5,6,1,4,7);
         Triangle t2 = new Triangle(1.5,5.2,8.4,2.4,2.8,1.9);
+        RectangleIncline ri = new RectangleIncline(4,2,1.5,3.2,60);
+        RectangleIncline ri2 = new RectangleIncline(2,7,1.9,5.1,130);
 
         dessin.ajout(r);
         dessin.ajout(r2);
@@ -23,6 +25,8 @@ public class Exec {
         dessin.ajout(d2);
         dessin.ajout(t);
         dessin.ajout(t2);
+        dessin.ajout(ri);
+        dessin.ajout(ri2);
 
         System.out.println(dessin.retourneSurfaceTotale());
         System.out.println(dessin.retournePlusGrand());
