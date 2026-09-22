@@ -20,9 +20,14 @@ public class Exec {
         dessin.ajout(d);
         dessin.ajout(d2);
 
-        System.out.println(dessin.retournePlusGrand());
         System.out.println(dessin.retourneSurfaceTotale());
+        System.out.println(dessin.retournePlusGrand());
 
+        Point p = new Point(5,9);
+
+        for (int i = 0 ; i < dessin.nbFigures; i++){
+            System.out.println("Figure " + (i+1) + " : " + dessin.figures[i]);
+        }
 
     }
 
